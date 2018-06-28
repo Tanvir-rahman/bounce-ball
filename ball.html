@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ball</title>
+  <link rel="stylesheet" href="./ball.css">
+</head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+<style>
+</style>
+
+<script>
+  const myFunction = () => {
+
+    // Animation
+    let height = window.innerHeight - 100;
+    let width = window.innerWidth - 100;
+
+    let height2 = height + 10;
+    let width2 = width + 10;
+
+    let xSpeed1 = 1;
+    let ySpeed1 = 1;
+
+    let xSpeed2 = -1;
+    let ySpeed2 = 1;
+
+    setInterval(function () {
+      var element = document.getElementById('ball2');
+      var style = window.getComputedStyle(element);
+      var b2Y = style.getPropertyValue('top');
+
+
+      var element = document.getElementById('ball2');
+      var style = window.getComputedStyle(element);
+      var b2X = style.getPropertyValue('left');
+
+      b2X = parseInt(b2X);
+      b2Y = parseInt(b2Y);
+
+      if (b2X >= width2 || b2X <= 0)
+        xSpeed2 *= -1;
+      if (b2Y >= height2 || b2Y <= 0)
+        ySpeed2 *= -1;
+
+      b2X = String(b2X - xSpeed2) + "px";
+      b2Y = String(b2Y + ySpeed2) + "px";
+
+      $('#ball2').css({
+        left: b2X,
+        top: b2Y
+      });
+
+      // var elements = document.getElementById('ball2');
+      // var styles = window.getComputedStyle(element).setProperty('top', b2Y);
+
+
+    }, 10);
+  };
+</script>
+
+
+<body onload="myFunction()">
+  <div id="ball2">
+  </div>
+</body>
+
+</html>
