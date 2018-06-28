@@ -5,10 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Ball</title>
+  <title> Bounce Ball</title>
   <link rel="stylesheet" href="./ball.css">
 </head>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
 <style>
 </style>
@@ -16,7 +15,6 @@
 <script>
   const myFunction = () => {
 
-    // Animation
     let height = window.innerHeight - 100;
     let width = window.innerWidth - 100;
 
@@ -50,14 +48,8 @@
       b2X = String(b2X - xSpeed2) + "px";
       b2Y = String(b2Y + ySpeed2) + "px";
 
-      $('#ball2').css({
-        left: b2X,
-        top: b2Y
-      });
-
-      // var elements = document.getElementById('ball2');
-      // var styles = window.getComputedStyle(element).setProperty('top', b2Y);
-
+      document.getElementById('ball2').style.setProperty('top', b2Y);
+      document.getElementById('ball2').style.setProperty('left', b2X);
 
     }, 10);
   };

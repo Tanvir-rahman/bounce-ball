@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 #ball2 {
   width: 100px;
   height: 100px;
